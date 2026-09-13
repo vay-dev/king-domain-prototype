@@ -66,8 +66,17 @@ input,textarea{font-family:inherit}
 /* ---------- screen switcher ---------- */
 .switcher{
   flex:0 0 auto;background:var(--ink);border-bottom:1px solid var(--ink-3);
+  position:relative;
 }
-.switcher-row{display:flex;gap:6px;overflow-x:auto;padding:9px 12px}
+.switcher-row{display:flex;gap:6px;overflow-x:auto;padding:9px 12px;scroll-behavior:smooth}
+/* Edge fades hint that the row scrolls — .switcher-row alone gave no visual cue
+   that screens were cut off past the frame edge. */
+.switcher::before,.switcher::after{
+  content:'';position:absolute;top:0;width:22px;height:calc(100% - 30px);
+  pointer-events:none;z-index:2;
+}
+.switcher::before{left:0;background:linear-gradient(to right,var(--ink),transparent)}
+.switcher::after{right:0;background:linear-gradient(to left,var(--ink),transparent)}
 .chip{
   flex:0 0 auto;display:flex;align-items:center;gap:6px;
   padding:6px 10px;border-radius:var(--r);
@@ -280,7 +289,7 @@ input,textarea{font-family:inherit}
   background:var(--ink);border-top:1px solid var(--ink-3);
   display:flex;align-items:center;justify-content:space-around;padding:0 6px;z-index:20;
 }
-.nav-i{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 8px;color:var(--slate-dim);transition:color var(--snap) var(--ease)}
+.nav-i{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 8px;color:var(--slate-dim);text-decoration:none;transition:color var(--snap) var(--ease)}
 .nav-i:hover{color:var(--paper)}
 .nav-i.on{color:var(--gold)}
 .nav-i svg{width:19px;height:19px}
@@ -1202,7 +1211,9 @@ function go(i){
   if(i<0||i>=SCREENS.length)return;
   current=i;
   document.querySelectorAll('.screen').forEach(el=>el.classList.toggle('on',+el.dataset.screen===i));
-  document.querySelectorAll('.chip').forEach((el,n)=>el.classList.toggle('on',n===i));
+  const chips=document.querySelectorAll('.chip');
+  chips.forEach((el,n)=>el.classList.toggle('on',n===i));
+  chips[i]?.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
   const a=SCREENS[i].actor;
   document.getElementById('tag-talent').className='actor-tag'+(a==='talent'?' on-talent':'');
   document.getElementById('tag-client').className='actor-tag'+(a==='client'?' on-client':'');
