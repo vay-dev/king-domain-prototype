@@ -536,15 +536,15 @@ svg{flex:0 0 auto}
 
           <div class="notice notice-pending" style="margin-top:9px;padding:7px 9px">
             <svg viewBox="0 0 24 24" fill="none" stroke="#B35A3A" stroke-width="2" width="13" height="13"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            <p style="color:#B35A3A;font-weight:600">Mobile app dev proof review pending</p>
+            <p style="color:#B35A3A;font-weight:600">You can't apply yet: your Mobile App Development proof is still pending human review</p>
           </div>
 
           <div class="divide"></div>
           <div class="row-b" style="margin-bottom:9px">
-            <span class="t-small">1 applicant</span>
+            <span class="t-small">1 other applicant already verified in this category</span>
             <span class="t-small">Closes in 3 days</span>
           </div>
-          <button class="btn btn-ghost btn-sm" disabled>Application locked — pending review</button>
+          <button class="btn btn-ghost btn-sm" disabled>Apply — locked until your proof is verified</button>
         </div>
 
         <p class="annot">[Illustrative — marketplace model, hybrid (§7/§13)]</p>
@@ -556,7 +556,7 @@ svg{flex:0 0 auto}
       <div class="stack">
         <div class="card-ink">
           <div class="row-b">
-            <span class="eyebrow"><span class="eyebrow-sq"></span><span class="t-mono">Applying to contract</span></span>
+            <span class="eyebrow"><span class="eyebrow-sq"></span><span class="t-mono">Expressing interest</span></span>
             <span class="badge badge-ondark">Campus brand campaign</span>
           </div>
           <h1 class="t-h2" style="margin:9px 0 8px;color:var(--paper)">3x TikTok Reels for Campus Launch</h1>
@@ -739,73 +739,81 @@ svg{flex:0 0 auto}
         </div>
 
         <!-- applicant 1 -->
-        <div class="card">
+        <div class="card" id="applicant-ao" data-applicant>
           <div class="row" style="gap:10px">
             <span class="av">AO</span>
             <div style="min-width:0;flex:1">
               <div class="row" style="gap:6px;flex-wrap:wrap"><span class="t-h2" style="font-size:16px">Adebayo O.</span><span class="badge badge-green">UNILAG verified</span></div>
               <div class="t-mono-sm" style="color:var(--slate);margin-top:3px;letter-spacing:.04em">Short-form video • 4 completed contracts</div>
             </div>
+            <span class="badge badge-mute award-status" hidden>Not selected</span>
           </div>
 
-          <div class="well" style="margin-top:11px">
-            <div class="media crop-crowd">
-              <img src="assets/prototype/techfest-reel-thumb.png" alt="UNILAG Tech Fest promotional reel">
-            <div class="media-mask"><span>Sample delivered work — placeholder</span></div>
-              <div class="media-scrim"></div>
-              <button class="play" data-play><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-            </div>
-            <div class="t-h3" style="font-size:13px;margin-top:9px">UNILAG Tech Fest Promotional Reel</div>
-            <div class="notice" style="background:var(--paper-2);border:1px solid var(--hair);margin-top:7px;padding:8px 9px">
-              <p style="font-style:italic">Human reviewer: excellent pacing, clean audio mixing, 4K render.</p>
+          <div class="field" style="margin-top:11px">
+            <span class="field-l" style="color:var(--slate-dim)">Existing portfolio — not made for this job</span>
+            <div class="well" style="margin-top:5px">
+              <div class="media crop-crowd">
+                <img src="assets/prototype/techfest-reel-thumb.png" alt="UNILAG Tech Fest promotional reel">
+              <div class="media-mask"><span>Sample delivered work — placeholder</span></div>
+                <div class="media-scrim"></div>
+                <button class="play" data-play><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+              </div>
+              <div class="t-h3" style="font-size:13px;margin-top:9px">UNILAG Tech Fest Promotional Reel</div>
+              <div class="notice" style="background:var(--paper-2);border:1px solid var(--hair);margin-top:7px;padding:8px 9px">
+                <p style="font-style:italic">Human reviewer: excellent pacing, clean audio mixing, 4K render.</p>
+              </div>
             </div>
           </div>
 
           <div class="row-b well" style="margin-top:9px;padding:8px 10px">
-            <span class="t-mono-sm" style="color:var(--ink)">Proposed: ₦45,000</span>
+            <span class="t-mono-sm" style="color:var(--ink)">Rate for this job: ₦45,000</span>
             <span class="t-mono-sm" style="color:var(--ink)">Timeline: 3 days</span>
           </div>
 
           <div class="stack" style="gap:7px;margin-top:10px">
-            <button class="btn btn-gold btn-sm" data-goto="6">Review proposal &amp; accept terms</button>
+            <button class="btn btn-gold btn-sm" data-award="applicant-ao" data-goto="6">Select &amp; fund this student</button>
             <button class="btn btn-ghost btn-sm">View profile</button>
           </div>
         </div>
 
         <!-- applicant 2 — newly verified, zero contracts, equal footing -->
-        <div class="card">
+        <div class="card" id="applicant-ck" data-applicant>
           <div class="row" style="gap:10px">
             <span class="av">CK</span>
             <div style="min-width:0;flex:1">
               <div class="row" style="gap:6px;flex-wrap:wrap"><span class="t-h2" style="font-size:16px">Chidi K.</span><span class="badge badge-green">LCPU verified</span></div>
               <div class="t-mono-sm" style="color:var(--slate);margin-top:3px;letter-spacing:.04em">Short-form video • newly verified (0 completed contracts)</div>
             </div>
+            <span class="badge badge-mute award-status" hidden>Not selected</span>
           </div>
 
-          <div class="well" style="margin-top:11px">
-            <div class="media">
-              <img src="assets/prototype/campus-delivery-thumb.png" alt="Campus food delivery app promo">
-              <div class="media-scrim"></div>
-              <button class="play" data-play><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-            </div>
-            <div class="t-h3" style="font-size:13px;margin-top:9px">Campus Food Delivery App Promo</div>
-            <div class="notice" style="background:var(--paper-2);border:1px solid var(--hair);margin-top:7px;padding:8px 9px">
-              <p style="font-style:italic">Human reviewer: good edit quality, strong call-to-action.</p>
+          <div class="field" style="margin-top:11px">
+            <span class="field-l" style="color:var(--slate-dim)">Existing portfolio — not made for this job</span>
+            <div class="well" style="margin-top:5px">
+              <div class="media">
+                <img src="assets/prototype/campus-delivery-thumb.png" alt="Campus food delivery app promo">
+                <div class="media-scrim"></div>
+                <button class="play" data-play><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+              </div>
+              <div class="t-h3" style="font-size:13px;margin-top:9px">Campus Food Delivery App Promo</div>
+              <div class="notice" style="background:var(--paper-2);border:1px solid var(--hair);margin-top:7px;padding:8px 9px">
+                <p style="font-style:italic">Human reviewer: good edit quality, strong call-to-action.</p>
+              </div>
             </div>
           </div>
 
           <div class="row-b well" style="margin-top:9px;padding:8px 10px">
-            <span class="t-mono-sm" style="color:var(--ink)">Proposed: ₦40,000</span>
+            <span class="t-mono-sm" style="color:var(--ink)">Rate for this job: ₦40,000</span>
             <span class="t-mono-sm" style="color:var(--ink)">Timeline: 2 days</span>
           </div>
 
           <div class="stack" style="gap:7px;margin-top:10px">
-            <button class="btn btn-gold btn-sm" data-goto="6">Review proposal &amp; accept terms</button>
+            <button class="btn btn-gold btn-sm" data-award="applicant-ck" data-goto="6">Select &amp; fund this student</button>
             <button class="btn btn-ghost btn-sm">View profile</button>
           </div>
         </div>
 
-        <p class="annot">[Illustrative — talent proof evaluation step (§5). No ranking, no score: applicants are shown on equal footing, ordered neutrally.]</p>
+        <p class="annot">[Illustrative — job marketplace, applicants compared on existing proof only (§5/§7). No ranking, no score, no spec work: each card shows a portfolio sample built before this job existed, not a submission made to compete for it.]</p>
       </div>
     </section>
 
@@ -1234,9 +1242,21 @@ function busy(btn,working,done,cls){
 }
 
 document.addEventListener('click',e=>{
-  const t=e.target.closest('[data-goto],[data-verify],[data-submit-proof],[data-submit-proposal],[data-fund],[data-submit-work],[data-release],[data-finalise],[data-toggle-revision],[data-tog],[data-play]');
+  const t=e.target.closest('[data-goto],[data-verify],[data-submit-proof],[data-submit-proposal],[data-fund],[data-submit-work],[data-release],[data-finalise],[data-toggle-revision],[data-tog],[data-play],[data-award]');
   if(!t)return;
 
+  if(t.hasAttribute('data-award')){
+    const winnerId=t.dataset.award;
+    document.querySelectorAll('[data-applicant]').forEach(card=>{
+      const isWinner=card.id===winnerId;
+      const status=card.querySelector('.award-status');
+      status.hidden=false;
+      status.textContent=isWinner?'Selected':'Not selected';
+      status.className='badge award-status '+(isWinner?'badge-green':'badge-mute');
+      card.querySelectorAll('button').forEach(b=>b.disabled=!isWinner);
+    });
+    return go(+t.dataset.goto);
+  }
   if(t.hasAttribute('data-goto'))return go(+t.dataset.goto);
   if(t.hasAttribute('data-verify'))return busy(t,'Verifying…','Verified ✓','btn-green'),setTimeout(()=>go(1),1400);
   if(t.hasAttribute('data-submit-proof'))return busy(t,'Submitting…','Sent for review ✓','btn-green');
